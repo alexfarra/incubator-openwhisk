@@ -60,8 +60,8 @@ protected[core] object MemoryLimit extends ArgNormalizer[MemoryLimit] {
    */
   @throws[IllegalArgumentException]
   protected[core] def apply(megabytes: ByteSize): MemoryLimit = {
-    require(megabytes >= minMemory, s"memory $megabytes below test allowed threshold of $minMemory")
-    require(megabytes <= maxMemory, s"memory $megabytes exceeds test allowed threshold of $maxMemory")
+    require(megabytes >= minMemory, s"memory $megabytes below allowed threshold of $minMemory")
+    require(megabytes <= maxMemory, s"memory $megabytes exceeds allowed threshold of $maxMemory")
     new MemoryLimit(megabytes.toMB.toInt)
   }
 
