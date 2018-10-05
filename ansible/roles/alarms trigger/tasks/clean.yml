@@ -1,0 +1,14 @@
+---
+# Remove alarms trigger service.
+
+- name: remove alarms trigger
+  docker_container:
+    name: catalog_alarms
+    state: absent
+  ignore_errors: True
+
+- name: remove alarms trigger log directory
+  file:
+    path: "{{ whisk_logs_dir }}/alarmsTrigger"
+    state: absent
+  become: true

@@ -1,0 +1,9 @@
+---
+# In deploy mode it will deploy the alarms trigger service.
+# In clean mode it will remove the alarms trigger service container.
+
+- include: deploy.yml
+  when: mode == "deploy"
+
+- include: clean.yml
+  when: mode == "clean"
