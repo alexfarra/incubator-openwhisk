@@ -1,0 +1,7 @@
+---
+# This playbook deploys the alarms trigger service  
+
+# Deploy alarms trigger
+- hosts: edge
+  roles:
+  - alarmstrigger
