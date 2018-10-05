@@ -1,0 +1,8 @@
+---
+- include: alarmstrigger.yml
+
+- hosts: ansible
+  tasks:
+    - include: tasks/installProviderActions.yml
+      with_dict: "{{ provider_repos }}"
+      when: mode == "deploy"
